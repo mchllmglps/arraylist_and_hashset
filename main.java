@@ -7,11 +7,6 @@ import java.util.Iterator;
 
 public class main{
 
-// 1st implement an ArrayList and HashSet
-// 2nd Ask for user input 5 times, and then add the values into the ArrayList and HashSet
-// 3rd Display the values in the arraylist and HashSet.
-// 4th Create repository for github and push the code.
-
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
