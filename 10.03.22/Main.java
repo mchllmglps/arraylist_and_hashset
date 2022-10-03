@@ -46,7 +46,7 @@ public class Main{
         try{
             if(user < 0){
                 input.close();
-                throw new BooksException("Your input in negative. Please input positive index.");
+                throw new BooksException("Your input is negative. Please input positive index.");
             }
             if(user > 5){
                 input.close();
