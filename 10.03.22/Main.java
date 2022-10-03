@@ -1,9 +1,10 @@
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         
         List<String> books = new ArrayList<String>();
         
@@ -19,11 +20,48 @@ public class Main{
         book2.setBookquote("I am not afraid of storms, for I am learning how to sail my ship.");
         books.add("\""+ book2.getBookquote() + "\"" + " from "+ book2.getBookname() + " by: " + book2.getAuthorname());
 
+        Author<String> book3 = new Author<String>();
+        book3.setAuthorname("Joseph Heller");
+        book3.setBookname("Catch-22");
+        book3.setBookquote("Anything worth dying for is certainly worth living for.");
+        books.add("\""+ book3.getBookquote() + "\"" + " from "+ book3.getBookname() + " by: " + book3.getAuthorname());
 
-        Iterator<String> it = books.iterator();
-        while(it.hasNext()){
-            System.out.println(it.next());
+        Author<String> book4 = new Author<String>();
+        book4.setAuthorname("Gabriel Garcia Marquez");
+        book4.setBookname("One Hundred Years of Solitude");
+        book4.setBookquote("There is always something left to love.");
+        books.add("\""+ book4.getBookquote() + "\"" + " from "+ book4.getBookname() + " by: " + book4.getAuthorname());
+        
+        Author<String> book5 = new Author<String>();
+        book5.setAuthorname("Paulo Coelho");
+        book5.setBookname("The Alchemist");
+        book5.setBookquote("It's the possibility of having a dream come true that makes life interesting.");
+        books.add("\""+ book5.getBookquote() + "\"" + " from "+ book5.getBookname() + " by: " + book5.getAuthorname());
+
+
+
+        System.out.print("Enter Book index: ");
+        Integer user = input.nextInt();
+
+        try{
+            if(user < 0){
+                input.close();
+                throw new BooksException("Your input in negative. Please input positive index.");
+            }
+            if(user > 5){
+                input.close();
+                throw new BooksException("Your input exceeds the size of array.");
+            }
+
+            System.out.println("Book Index: " + user);
+            System.out.println(books.get(user));
+
         }
+        catch(BooksException e){
+            System.out.println(e.getMessage());
+        }
+
+        input.close();
 
     }
 }
