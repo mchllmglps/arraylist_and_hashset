@@ -14,8 +14,4 @@ public class Music {
     public String getTitle() {
         return title;
     }
-
-    public String toString(){
-        return "Music{" + "Genre: " + genre + "Title: " + title;
-    }
 }
