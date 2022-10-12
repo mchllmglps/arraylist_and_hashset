@@ -33,7 +33,6 @@ public class Main{
                 System.out.print("Genre: ");
                 String musc_genre = sc.nextLine();
     
-
                 listOfSongs.add(new Music(musc_genre, musc_title));
             }
 
@@ -41,7 +40,7 @@ public class Main{
             System.out.println("Here's Your Playlist!");
             System.out.println("=====================================");
             for(Music list : listOfSongs){
-                System.out.println("Title: " + list.getTitle() + " (" + "Genre: " + list.getGenre() + ")");    
+                System.out.println("Title: " + list.getTitle() + " || " + "Genre: " + list.getGenre());    
             }
             System.out.println("=====================================");
             System.out.println("");
